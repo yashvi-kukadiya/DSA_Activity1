@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infix to Postfix Converter | DSA Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-icon">&lt;/&gt;</div>
+            <span>DSA <b>LAB</b></span>
+        </div>
+        <div class="nav-badge">STACK APPLICATION</div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="eyebrow">
+                <span class="dot"></span>
+                DATA STRUCTURES &amp; ALGORITHMS
+            </div>
+            <h1>Infix to <span>Postfix</span><br>Converter</h1>
+            <p>Visualize every step of expression conversion using a stack.</p>
+        </section>
+
+        <section class="converter-card">
+            <div class="section-heading">
+                <div>
+                    <h2>Expression Converter</h2>
+                    <p>Enter your mathematical expression below</p>
+                </div>
+                <div class="stack-icon">▤</div>
+            </div>
+
+            <form id="converterForm">
+                <label for="expression">ENTER INFIX EXPRESSION</label>
+                <input
+                    type="text"
+                    id="expression"
+                    placeholder="Example: (A+B)*C-D/E"
+                    autocomplete="off"
+                    required
+                >
+
+                <div class="examples">
+                    <span>Try example:</span>
+                    <button type="button" class="example-btn" data-value="A+B*C">A+B*C</button>
+                    <button type="button" class="example-btn" data-value="(A+B)*C">(A+B)*C</button>
+                    <button type="button" class="example-btn" data-value="A+B-C">A+B-C</button>
+                </div>
+
+                <button type="submit" class="convert-btn">
+                    Convert Expression <span>→</span>
+                </button>
+            </form>
+
+            <div id="errorMessage" class="error-message" role="alert" hidden></div>
+
+            <div id="results" hidden>
+                <div class="result-grid">
+                    <div class="result-box infix-box">
+                        <div class="result-label">INFIX EXPRESSION</div>
+                        <div id="infixResult" class="result-value"></div>
+                    </div>
+                    <div class="result-box postfix-box">
+                        <div class="result-label">POSTFIX EXPRESSION</div>
+                        <div id="postfixResult" class="result-value"></div>
+                        <span class="success-label">✓ Conversion complete</span>
+                    </div>
+                </div>
+
+                <div class="table-heading">
+                    <div>
+                        <h2>Step-by-Step Execution</h2>
+                        <p>Track how each symbol moves through the stack</p>
+                    </div>
+                    <span class="step-count" id="stepCount">0 STEPS</span>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>STEP</th>
+                                <th>SYMBOL</th>
+                                <th>STACK</th>
+                                <th>OUTPUT</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stepsBody"></tbody>
+                    </table>
+                </div>
+
+                <div class="legend">
+                    <span><i class="legend-dot blue"></i> Current symbol</span>
+                    <span><i class="legend-dot green"></i> Postfix output</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-grid">
+            <div class="info-card">
+                <div class="info-icon blue-icon">01</div>
+                <h3>Read Expression</h3>
+                <p>Read each operand and operator from left to right.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon purple-icon">02</div>
+                <h3>Use Stack</h3>
+                <p>Manage operators according to precedence and parentheses.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon green-icon">03</div>
+                <h3>Get Postfix</h3>
+                <p>Collect operands and operators in postfix order.</p>
+            </div>
+        </section>
+
+        <footer>
+            <span>DSA ACTIVITY</span>
+            <span>Infix to Postfix Conversion · Stack Based Algorithm</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
